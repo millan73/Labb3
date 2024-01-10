@@ -32,8 +32,6 @@ function fetchBlogInfo({ params }: Params) {
 export default function Page({ params }: Params) {
     const markDown = fetchBlogInfo({ params })
 
-    console.log(markDown)
-
     return (
         <>
             <div dangerouslySetInnerHTML={{ __html: markDown.htmlString }} />

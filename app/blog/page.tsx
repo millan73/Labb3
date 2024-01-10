@@ -6,12 +6,19 @@ export default function Blog() {
 
     const fileNames = files.map((filename) => filename.replace('.md', ''))
 
-    console.log(fileNames)
-
     return (
         <>
             <div>
                 <h1>Blog</h1>
+                <ul>
+                    {fileNames.map((file) => (
+                        <>
+                            <li key={file}>
+                                <Link href={`/blog/` + file}>{file}</Link>
+                            </li>
+                        </>
+                    ))}
+                </ul>
             </div>
         </>
     )
